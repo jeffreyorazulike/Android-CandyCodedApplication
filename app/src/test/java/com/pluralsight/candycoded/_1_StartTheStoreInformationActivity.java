@@ -2,8 +2,9 @@ package com.pluralsight.candycoded;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -68,16 +69,14 @@ public class _1_StartTheStoreInformationActivity {
             }
 
             try {
-                PowerMockito.verifyNew(Intent.class, Mockito.atLeastOnce()).withArguments(Mockito.any(
-                    MainActivity.class), Mockito.any(Class.class));
+                PowerMockito.verifyNew(Intent.class, Mockito.atLeastOnce()).withArguments(Mockito.any(MainActivity.class), Mockito.any(Class.class));
                 called_Intent = true;
             } catch (Throwable e) {
                 //e.printStackTrace();
             }
 
             // Check if new Intent() was called with the correct arguments.
-            PowerMockito.verifyNew(Intent.class, Mockito.atLeastOnce()).withArguments(Mockito.eq(activity), Mockito.eq(
-                InfoActivity.class));
+            PowerMockito.verifyNew(Intent.class, Mockito.atLeastOnce()).withArguments(Mockito.eq(activity), Mockito.eq(InfoActivity.class));
             called_Intent_correctly = true;
 
             // Check if startActivity() was called with the correct argument.
